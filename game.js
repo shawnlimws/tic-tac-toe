@@ -15,7 +15,7 @@ var button9 = document.getElementById('button9')
 
 var playButton = document.getElementById('playButton')
 
-//Choosin the square
+// Choosin the square
 function pickSquare () {
   if (this.innerHTML !== '') {
     return
@@ -32,7 +32,6 @@ function pickSquare () {
   this.className = 'occupied'
 }
 // Disable hover function after picking
-
 
 // Checking for winner
 function checkCombination (x, y, z) {
