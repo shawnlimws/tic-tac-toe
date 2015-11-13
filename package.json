@@ -12,7 +12,9 @@
     "build-html": "cp game/index.html dist/index.html",
     "build-css": "cp game/app.css dist/app.css",
     "build-js": "browserify game/game.js --outfile dist/game.js --transform babelify",
-    "watch": "npm run build && npm run watch-js & npm run start-server",
+    "watch": "npm run build && npm run watch-js & npm run watch-css & npm run watch-html & npm run start-server",
+    "watch-css": "watch-spawn --pattern 'game/index.html' npm run build-css",
+    "watch-html": "watch-spawn -p 'game/index.html' npm run build-html",
     "watch-js": "watchify game/game.js --outfile dist/game.js --transform babelify --verbose"
   },
   "repository": {
