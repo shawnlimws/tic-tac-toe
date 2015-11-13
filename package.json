@@ -4,8 +4,10 @@
   "description": "tic tac toe game",
   "main": "game.js",
   "scripts": {
+    "start": "npm run build && npm run start-server",
+    "start-server": "http-server dist",
     "test": "standard",
-    "build": "browserify game.js --outfile game.dist.js --transform babelify"
+    "build": "browserify game/game.js --outfile dist/dist.js --transform babelify"
   },
   "repository": {
     "type": "git",
