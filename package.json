@@ -7,7 +7,13 @@
     "start": "npm run build && npm run start-server",
     "start-server": "http-server dist",
     "test": "standard",
-    "build": "browserify game/game.js --outfile dist/dist.js --transform babelify"
+    "clean": "rm -rf dist",
+    "build": "npm run clean && mkdir dist && npm run build && npm run build-css && npm run build-js",
+    "build-html": "cp game/index.html dist/index.html",
+    "build-css": "cp game/game.css dist.game.css",
+    "bulid-js": "browserify game/game.js --outfile dist/game.js --transform babelify",
+    "watch": "npm run build && npm run watch-js & npm run start-server",
+    "watch-js": "watchify game/game.js --outfile dist/game.js --transform babelify --verbose" 
   },
   "repository": {
     "type": "git",
